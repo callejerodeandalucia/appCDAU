@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Alta Vía/Portal</title>
+<link rel="stylesheet" type="text/css" href="css/formulario.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/formulario.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/formulario.js"></script>
+
+</head>
+<body onload="init()">
+	<form id="altaIncidencias" action="javascript:enviaAltaIncidencia()" method="POST" class="formIncidencias">
+
+		<h1>Alta de vía/portal</h1>
+		<hr>
+		<table style="width: auto">
+
+			<tr>
+				<td style="width: 150px; padding: 0px 0px 0px 20px;"
+					title="TituloNota"><b>Título:(*)</b></td>
+				<td style="width: 200px"><input id="tituloNota" type="text"
+					name="tituloNota" class="tituloNota" required/></td>
+			</tr>
+			<tr>
+				<td style="width: 150px; padding: 0px 0px 0px 20px;"
+					title="MotivoApertura"><b>Motivo de apertura:(*)</b></td>
+				<td style="width: 200px"><select id="tipoinciformulario" name="tipoinciformulario"
+					 onchange="changeMotivoApertura();" required>
+						<option value="">--Seleccione un motivo de apertura--</option>
+						<option value="1">Alta de vía</option>
+						<option value="4">Alta de portal</option>
+				</select></td>
+			</tr>
+
+			<tr>
+				<td style="width: 150px; padding: 0px 0px 0px 20px;"
+					title="Municipio"><b>Municipio:(*)</b></td>
+				<td style="width: 200px"><select id="municipioNota"
+					class="municipioNota" name="municipioNota" required>
+						<option value="">--Seleccione un municipio--</option>
+				</select></td>
+			</tr>
+		</table>
+		<table style="width: auto">
+			<tr>
+				<td style="width: 150px; padding: 0px 0px 0px 20px;" title="Tipovia"><b>Tipo
+						de la vía:(*)</b></td>
+				<td style="width: 200px"><select id="tipoVia" class="tipoVia" name="tipoVia" required>
+						<option value="">--Seleccione un tipo de vía--</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td style="width: 150px; padding: 0px 0px 0px 20px;"
+					title="NombreVia"><b>Nombre de vía:(*)</b></td>
+				<td style="width: 200px"><input id="nombreVia" type="text" class="nombreVia" name="nombreVia"
+					style="width: 400px; font-size: small;" maxlength="100" required/><br></td>
+			</tr>
+			<tr id="tipoPortalTr">
+				<td style="width: 150px; padding: 0px 0px 0px 20px;" title="tipoPortal"><b>Tipo de portal(*):</b></td>
+				<td style="width: 200px"><select id="tipoPortal"
+					class="tipoPortal" name="tipoPortal" style="width: 400px; font-size: small;" required>
+					<option value="">Seleccione un tipo de portal</option>
+					<option value="PORTAL">PORTAL</option>
+					<option value="PUNTO KILOMETRICO">PUNTO KILOMETRICO</option>
+					<option value="DISEMINADO">DISEMINADO</option></select></td>
+			</tr>
+			<tr>
+				<td style="width: 150px; padding: 0px 0px 0px 20px;" title="Portal"><b
+					id="txtPortal">N&uacute;mero / KM:(*)</b></td>
+				<td style="width: 200px"><input id="numPortal" type="text" class="numPortal" name="numPortal"
+					style="width: 400px; font-size: small;" maxlength="20" required/></td>
+			</tr>
+			<tr>
+				<td style="width: 150px; padding: 0px 0px 0px 20px;" title="Letra"><b>Letra:</b></td>
+				<td style="width: 200px"><input id="letraPortal" type="text"
+					class="letraPortal" style="width: 400px; font-size: small;"
+					maxlength="20" /></td>
+			</tr>
+
+			<tr>
+				<td style="width: 150px; padding: 0px 0px 0px 20px;" title="Bloque"><b>Bloque:</b></td>
+				<td style="width: 200px"><input id="bloquePortal" type="text"
+					class="bloquePortal" style="width: 400px; font-size: small;"
+					maxlength="20" /></td>
+			</tr>
+
+			<tr>
+				<td style="width: 150px; padding: 0px 0px 0px 20px;" title="Portal"><b>Portal:</b></td>
+				<td style="width: 200px"><input id="portal" type="text"
+					class="portal" style="width: 400px; font-size: small;"
+					maxlength="20" /></td>
+			</tr>
+		</table>
+		<table style="width: auto">
+			<tr>
+				<td
+					style="width: 150px; padding: 0px 0px 0px 20px; vertical-align: text-top;"
+					title="Descripcion"><b>Descripción:(*)</b></td>
+				<td style="width: 200px"><textarea id="descripcion"
+						class="descripcion" style="width: 400px; font-size: small;" name="descripcion" required></textarea></td>
+			</tr>
+		</table>
+		<table style="width: auto">
+			<tr>
+				<td
+					style="width: 150px; padding: 0px 0px 0px 20px; vertical-align: text-top;"
+					title="coordX"><b>Coordenada X:(*)</b></td>
+				<td style="width: 200px"><textarea id="coordX" class="coordX"
+						style="width: 400px; font-size: small;" name="coordX" required></textarea></td>
+			</tr>
+			<tr>
+				<td
+					style="width: 150px; padding: 0px 0px 0px 20px; vertical-align: text-top;"
+					title="coordY"><b>Coordenada Y:(*)</b></td>
+				<td style="width: 200px"><textarea id="coordY" class="coordY"
+						style="width: 400px; font-size: small;" name="coordY" required></textarea></td>
+			</tr>
+		</table>
+		<br><br>
+		<hr>
+		<div class="botonera">
+			<input type="submit" class="boton enviarInc"
+				value="Enviar"> <input
+				type="button" onclick="clearForm();" value="Limpiar formulario"
+				class="boton limpiarForm">
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+function init(){
+var array=['04','11','14','18','21','23','41','29'];
+for(var j=0;j<array.length;j++){
+fillMunicipios(array[j]);
+}
+}
+</script>
+</html>

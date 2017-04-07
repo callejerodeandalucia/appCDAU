@@ -1,0 +1,109 @@
+form {
+    display: table;
+    width: 100%;
+}
+
+input[type="text"], input[type="password"], select, textarea {
+	padding: 3px;
+	border: 1px solid #DDDDDD;
+	background: -moz-linear-gradient(center top, #FFFFFF, #EEEEEE 1px, #FFFFFF 20px);
+	border-radius: 3px;
+	box-shadow: 0 0 2px #DDDDDD;
+	width: 400px;
+font-size: small;
+}
+input[type="text"] {
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 12px;
+}
+.login label, input {
+    float: left;
+}
+td {
+    text-align: left;
+}
+table {
+    empty-cells: show;
+    font-weight: bold;
+}
+body {
+	overflow-x: hidden;
+    font-size: 11px;
+    font-family: Verdana, Arial;
+    font-weight: normal;
+    color: #4C4C4C;
+	
+}
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: 0;
+}
+h1 {
+    font-size: 13px;
+    color: #205A7B;
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+    width: 100%;
+    width: 860px;
+    text-align: left;
+}
+hr {
+    border-color: #E0E0E0;
+    border-right: 0 none;
+    border-style: solid none none;
+    border-width: 1px 0 0;
+    margin-top: 5px;
+    width: 100%;
+}
+.botonera {
+    height: 50px;
+    padding: 10px;
+}
+.botonera .boton, .botonera button {
+    float: left;
+}
+input.boton {
+    border: 0px;
+}
+button, .boton {
+    text-align: center;
+    background: transparent none;
+    border: 0px;
+    width: 90px;
+    font-size: 10px;
+    color: #333333;
+    padding-top: 50px;
+    padding-top: 35px;
+    text-decoration: none;
+    white-space: normal;
+}
+.boton.enviarInc {
+    background: transparent url("../resources/enviarInc.png") no-repeat top center;
+}
+.boton.limpiarForm {
+    background: transparent url("../resources/limpiar-form.png") no-repeat top center;
+}
+.boton.volver {
+    background: transparent url("../resources/volver.png") no-repeat top center;
+}
+input.btn {
+    margin-left: 10px;
+}
+.btn {
+    background: transparent url(../resources/btn.png) repeat-x !important;
+    height: 25px;
+    font-size: 11px;
+    color: #000000 !important;
+    border: 1px solid #9d9d9d !important;
+    cursor: pointer;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.field-validation-error {
+    color: #b94a48;
+    border: 1px solid #b94a48;
+}
