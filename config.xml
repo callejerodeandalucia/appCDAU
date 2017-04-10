@@ -75,5 +75,14 @@
 		<gap:splash src="www/resources/Android/screen_land.jpg" gap:platform="android" gap:qualifier="land-hdpi" />
 		<gap:splash src="www/resources/Android/screen_land.jpg" gap:platform="android" gap:qualifier="land-xhdpi" />
     </platform>
+    <platform>
+		<access origin="tel:*" launch-external="yes"/>
+		<allow-navigation href="*"/>
+		<allow-navigation href="http://*/*"/>
+		<allow-navigation href="https://*/*"/>
+		<allow-navigation href="data:*"/>
+		<allow-intent href="*"/>
+		<access origin="*"/>
+    </platform>
 
 </widget>
