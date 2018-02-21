@@ -101,7 +101,7 @@ function alterElement(element, disable){
 }
 
 function fillMunicipios(idProvincia) {
-	url=urlServidor+"/ws/services/InterfazCDAUWS";
+	url=urlServidor+"/wscdau/services/InterfazCDAUWS";
 	var xmlhttp = new XMLHttpRequest();
 				var sr = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><obtenerMunicipios xmlns=\"'+url+'\"><codProv>'+idProvincia+'</codProv></obtenerMunicipios></soap:Body></soap:Envelope>';
 				xmlhttp.open('POST', url, true);
@@ -139,7 +139,7 @@ function fillTiposPortal(){
 		.val('');
 		var xmlhttp = new XMLHttpRequest();
 
- url=urlServidor+"/ws/services/InterfazCDAUWS";
+ url=urlServidor+"/wscdau/services/InterfazCDAUWS";
 xmlhttp.open('POST',url, true);
 		var sr = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><obtenerTiposVia xmlns=\"'+url+'\"></obtenerTiposVia></soap:Body></soap:Envelope>';
 
@@ -178,7 +178,7 @@ var coordX=$('#coordX').val();
 var coordY=$('#coordY').val();
 if(motivoApertura==1){
 	var json="{motivoApertura:"+motivoApertura+","+
-	         "ineMun:"+municipioINE+","+
+	         "ineMun:'"+municipioINE+"',"+
 	         "tipoVia:"+tipoVia+","+
 	         "nombreVia:"+nombreVia+","+
 	         "descripcion:"+descripcion+","+
@@ -187,7 +187,7 @@ if(motivoApertura==1){
 	         "}";
 }else{
 var json="{motivoApertura:"+motivoApertura+","+
-         "ineMun:"+municipioINE+","+
+         "ineMun:'"+municipioINE+"',"+
          "tipoVia:"+tipoVia+","+
          "nombreVia:"+nombreVia+","+
          "tipoPortalPK:"+tipoPortal+","+
@@ -197,7 +197,7 @@ var json="{motivoApertura:"+motivoApertura+","+
          "coordY:"+coordY+
          "}";
 }
-url=urlServidor+"/mantenimiento/services/InterfazIncidenciaCDAU";
+url=urlServidor+"/cdau_adm/services/InterfazIncidenciaCDAU";
 
 	var sr ="<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ws=\"http://ws.cdau.guadaltel.es\">"+
    "<soapenv:Header/>\n"+
